@@ -14,7 +14,7 @@ $ npm install
 
 1. Get your personal API token from Figma (available under Help and Account / Account Settings)
 2. Add it to `.env` file in the project folder
-3. Have your project ID ready (it is the part of project URL that comes after `/file/`, for example in `https://www.figma.com/file/U6RzRwTnN0urJr9xP7LtQJ` it is `U6RzRwTnN0urJr9xP7LtQJ`)
+3. Have your project ID ready (it is the part of project URL that comes after `/file/`, for example in `https://www.figma.com/file/U6RzEwWnN2urJr9xP7LtQJ` it is `U6RzEwWnN2urJr9xP7LtQJ`)
 
 ## Exproting colours and typography
 Once you have colour and text styles set in the Figma project, you can export them as SCSS variables and mixins.
@@ -33,10 +33,6 @@ In your Figma project, give your layers clear names and semantic prefixes:
 * `[B]` for BEM block
 * `[E]` for BEM element
 
-It should look this:
-
-![Figma Workspace Screenshot](/uploads/3012f6c66969a509572abd8c7b35d6b5/Screenshot_from_2019-05-31_17-59-15.png)
-
 You don't need to name all blocks, just the ones you want to export.
 
 ### Step 2
@@ -46,16 +42,13 @@ Run the export tool:
 $ gulp blocks --fileId=<your_project_ID>
 ```
 
-This will geherate SCSS files in `styles` with class names constructed according to the BEM notation and assumed text colours and typography mixins these classes might require. The whole process might look like this:
-![generating_blocks](/uploads/367b5d275849748cbc678bc5727d0831/generating_blocks.gif)
+This will geherate SCSS files in `styles` with class names constructed according to the BEM notation and assumed text colours and typography mixins these classes might require.
 
 ## Defining the export scope
 By default the tool scans the whole project tree for colour and font styles which may result in more assets than you've expected or assets that are unnecessary. You can also limit the scanning scope to one particular node (i. e. one layer or frame or page in the Figma project), so only its contents will be scanned for styles and / or blocks.
 
 ## Step 1
-In your Figma project, pick the desired layer / frame / page / group and add an `[X]` symbol at the beginning its name:
-
-![Screenshot_from_2019-07-26_12-58-30](/uploads/351f86bce657db77a3ef73e77ad80016/Screenshot_from_2019-07-26_12-58-30.png)
+In your Figma project, pick the desired layer / frame / page / group and add an `[X]` symbol at the beginning its name.
 
 ## Step 2
 Run the export tool with `--entryPoint` key:
@@ -84,7 +77,7 @@ $ gulp blocks --fileId=<your_project_ID> --autoBlocks
 ```
 
 ## Additional information
-More information on BEM structure [here](https://gitlab.l.invia.lan/lighthouse/documentation/blob/master/development_guide/src/02_frontend.adoc).
+More information on BEM structure [here](https://bem.info).
 
 ## TODO
 * Detect colours and typography mixins more precise when generating boilerplate code
