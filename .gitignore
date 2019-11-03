@@ -1,0 +1,35 @@
+# Mac OS Files
+.DS_Store
+.Trashes
+
+# Go
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+backend/autocomplete/cp.html
+
+# Node
+logs
+*.log
+npm-debug.log*
+build/
+coverage/
+node_modules/
+.npm/
+
+# Frontend
+src-gen/
+
+# IDE
+.idea/
+*.iml
+.history/
+.vscode/
+
+# keeping folder due to
+!frontend/src-gen/.gitkeep
